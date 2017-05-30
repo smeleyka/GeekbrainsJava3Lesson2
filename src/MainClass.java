@@ -32,7 +32,7 @@ public class MainClass {
 
     public static void batchOperationEx() throws SQLException {
         connection.setAutoCommit(false);
-        ps = connection.prepareStatement("INSERT INTO students (name, score) VALUES (?, ?);");
+        ps = connection.prepareStatement("INSERT INTO students (name, score) VALUES ( ? , ? );");
         for (int i = 1; i <= 200; i++) {
             ps.setString(1, "bob" + i);
             ps.setInt(2, (i * 10) % 100 + 10);
